@@ -1,5 +1,5 @@
 p6df::modules::java::version() { echo "0.0.1" }
-p6df::modules::java::deps()    { 
+p6df::modules::java::deps()    {
 	ModuleDeps=()
 }
 
@@ -12,18 +12,20 @@ p6df::modules::java::external::brew() {
 
 p6df::modules::java::init() {
 
-  p6df::modules::java::jenv::init
+#  p6df::modules::java::jenv::init
 }
 
 p6df::modules::java::jenv::init() {
     [ -n "$DISABLE_ENVS" ] && return
 
-    export JENV_ROOT=/Users/pgollucci/.local/share/gcuisinier/jenv
-    p6dfz::util::path_if $JENV_ROOT/bin
+    JENV_ROOT=/Users/pgollucci/.local/share/gcuisinier/jenv
 
     if [ -x $JENV_ROOT/bin/jenv ]; then
+      export JENV_ROOT
       export HAS_JAENV=1
-      eval "$(jenv init - zsh)"
+      p6dfz::util::path_if $JENV_ROOT/bin
+
+     eval "$(jenv init - zsh)"
     fi
 }
 
