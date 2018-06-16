@@ -12,13 +12,15 @@ p6df::modules::java::external::brew() {
 
 p6df::modules::java::init() {
 
-  p6df::modules::java::jenv::init
+  p6df::modules::java::jenv::init "$P6_DFZ_SRC_DIR"
 }
 
 p6df::modules::java::jenv::init() {
+    local dir="$1"
+
     [ -n "$DISABLE_ENVS" ] && return
 
-    JENV_ROOT=/Users/pgollucci/.local/share/gcuisinier/jenv
+    JENV_ROOT=$dir/gcuisinier/jenv
 
     if [ -x $JENV_ROOT/bin/jenv ]; then
       export JENV_ROOT
