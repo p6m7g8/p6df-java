@@ -10,6 +10,11 @@ p6df::modules::java::external::brew() {
   brew cask install gradle
 }
 
+p6df::modules::java::home::symlink() {
+
+  # XXX: ENV move
+}
+
 p6df::modules::java::init() {
 
   p6df::modules::java::jenv::init "$P6_DFZ_SRC_DIR"
