@@ -1,18 +1,6 @@
 p6df::modules::java::version() { echo "0.0.1" }
 p6df::modules::java::deps()    { ModuleDeps=(gcuisinier/jenv) }
 
-p6df::modules::java::external::brew() {
-
-#  brew cask install $java_ver
-#  brew cask install $java_ver_dev
-  brew cask install gradle
-}
-
-p6df::modules::java::home::symlink() {
-
-  # XXX: ENV move
-}
-
 p6df::modules::java::langs() {
 
   jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home/
