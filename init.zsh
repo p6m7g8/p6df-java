@@ -31,5 +31,5 @@ p6df::modules::java::jenv::init() {
 
 p6df::prompt::java::line() {
 
-  env_version "j"
+  p6_lang_version "j"
 }
