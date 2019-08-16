@@ -1,10 +1,18 @@
 p6df::modules::java::version() { echo "0.0.1" }
 p6df::modules::java::deps()    { ModuleDeps=(gcuisinier/jenv) }
 
+p6df::modules::java::brew() {
+
+  brew cask install adoptopenjdk
+  brew install maven
+  brew install maven-completion
+  brew install maven-shell
+}
+
 p6df::modules::java::langs() {
 
   jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home/
-  jenv global 1.7
+  jenv global 12.0
   jenv rehash
 }
 
