@@ -12,7 +12,7 @@ p6df::modules::java::brew() {
 p6df::modules::java::langs() {
 
   jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home/
-  jenv global 12.0
+  jenv global 13.0
   jenv rehash
 }
 
