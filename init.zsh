@@ -3,6 +3,7 @@ p6df::modules::java::deps()    { ModuleDeps=(gcuisinier/jenv) }
 
 p6df::modules::java::brew() {
 
+  brew tap adoptopenjdk/openjdk
   brew cask install adoptopenjdk
   brew install maven
   brew install maven-completion
