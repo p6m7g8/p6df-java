@@ -40,5 +40,10 @@ p6df::modules::java::jenv::init() {
 
 p6df::prompt::java::line() {
 
+  p6_java_prompt_info
+}
+
+p6_java_prompt_info() {
+
   p6_lang_version "j"
 }
