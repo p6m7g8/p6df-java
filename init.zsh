@@ -6,6 +6,7 @@
 #>
 ######################################################################
 p6df::modules::java::version() { echo "0.0.1" }
+
 ######################################################################
 #<
 #
@@ -13,7 +14,12 @@ p6df::modules::java::version() { echo "0.0.1" }
 #
 #>
 ######################################################################
-p6df::modules::java::deps()    { ModuleDeps=(gcuisinier/jenv) }
+p6df::modules::java::deps() {
+  ModuleDeps=(
+    p6m7g8/p6common
+    gcuisinier/jenv
+  )
+}
 
 ######################################################################
 #<
@@ -79,18 +85,18 @@ p6df::modules::java::jenv::init() {
     export HAS_JAENV=1
     p6df::util::path_if $JENV_ROOT/bin
 
-   eval "$(jenv init - zsh)"
+    eval "$(p6_run_code jenv init - zsh)"
   fi
 }
 
 ######################################################################
 #<
 #
-# Function: p6df::prompt::java::line()
+# Function: p6df::modules::java::prompt::line()
 #
 #>
 ######################################################################
-p6df::prompt::java::line() {
+p6df::modules::java::prompt::line() {
 
   p6_java_prompt_info
 }
@@ -104,5 +110,6 @@ p6df::prompt::java::line() {
 ######################################################################
 p6_java_prompt_info() {
 
+  echo -n "j:\t  "
   p6_lang_version "j"
 }
