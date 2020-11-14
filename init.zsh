@@ -61,7 +61,7 @@ p6df::modules::java::init() {
 # Function: p6df::modules::java::jenv::init(dir)
 #
 #  Args:
-#	dir - 
+#	dir -
 #
 #>
 ######################################################################
