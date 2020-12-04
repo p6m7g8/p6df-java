@@ -23,7 +23,7 @@ p6df::modules::java::deps() {
 p6df::modules::java::brew() {
 
   brew tap adoptopenjdk/openjdk
-  brew cask install adoptopenjdk
+  brew install --cask adoptopenjdk
   brew install maven
   brew install maven-completion
   brew install maven-shell
@@ -39,7 +39,7 @@ p6df::modules::java::brew() {
 p6df::modules::java::langs() {
 
   jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home/
-  jenv global 13.0
+  jenv global 15.0
   jenv rehash
 }
 
