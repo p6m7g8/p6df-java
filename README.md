@@ -45,6 +45,7 @@
 - p6df::modules::java::deps()
 - p6df::modules::java::init()
 - p6df::modules::java::jenv::init(dir)
+- p6df::modules::java::jenv::prompt::line()
 - p6df::modules::java::langs()
 - p6df::modules::java::prompt::line()
 
