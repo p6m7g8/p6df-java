@@ -21,8 +21,15 @@ p6df::modules::java::deps() {
 ######################################################################
 p6df::modules::java::brew() {
 
+  brew install --cask homebrew/cask-versions/adoptopenjdk8
+
   brew tap adoptopenjdk/openjdk
-  brew install --cask adoptopenjdk
+  brew install --cask adoptopenjdk # 15
+  local ver
+  for ver in 9 10 11 12 13 14; do
+    brew install --cask adoptopenjdk${ver}
+  done
+
   brew install maven
   brew install maven-completion
   brew install maven-shell
@@ -37,7 +44,12 @@ p6df::modules::java::brew() {
 ######################################################################
 p6df::modules::java::langs() {
 
-  jenv add /Library/Java/JavaVirtualMachines/*/Contents/Home/
+  (
+    cd /Library/Java/JavaVirtualMachines/
+    for d in *; do 
+      (cd $d; jenv add ./Contents/Home)
+     done
+  )
   jenv global 15.0
   jenv rehash
 }
