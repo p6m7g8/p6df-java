@@ -38,9 +38,11 @@
 
 - [Change Log](CHANGELOG.md)
 
-### Usage
+## Usage
 
-#### init.zsh:
+### p6df-java:
+
+#### p6df-java/init.zsh:
 
 - p6_java_prompt_info()
 - p6df::modules::java::brew()
