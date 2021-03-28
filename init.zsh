@@ -15,6 +15,19 @@ p6df::modules::java::deps() {
 ######################################################################
 #<
 #
+# Function: p6df::modules::java::vscodes()
+#
+#>
+######################################################################
+p6df::modules::java::vscodes() {
+
+  # sonarlint
+  code --install-extension SonarSource.sonarlint-vscode
+}
+
+######################################################################
+#<
+#
 # Function: p6df::modules::java::brew()
 #
 #>
@@ -33,23 +46,27 @@ p6df::modules::java::brew() {
 #
 # Function: p6df::modules::java::langs()
 #
+#  Environment:	 XXX
 #>
 ######################################################################
 p6df::modules::java::langs() {
 
   (
     cd /Library/Java/JavaVirtualMachines/
-    for d in *; do 
-      (cd $d; jenv add ./Contents/Home)
-     done
+    for d in *; do
+      (
+        cd $d
+        jenv add ./Contents/Home
+      )
+    done
   )
   jenv global 16.0
   jenv rehash
 
-# XXX: These use the base brew java
-#  brew install maven
-#  brew install maven-completion
-#  brew install maven-shell
+  # XXX: These use the base brew java
+  #  brew install maven
+  #  brew install maven-completion
+  #  brew install maven-shell
 }
 
 ######################################################################
@@ -57,6 +74,7 @@ p6df::modules::java::langs() {
 #
 # Function: p6df::modules::java::init()
 #
+#  Environment:	 P6_DFZ_SRC_DIR
 #>
 ######################################################################
 p6df::modules::java::init() {
@@ -72,6 +90,7 @@ p6df::modules::java::init() {
 #  Args:
 #	dir -
 #
+#  Environment:	 DISABLE_ENVS HAS_JAENV JENV_ROOT
 #>
 ######################################################################
 p6df::modules::java::jenv::init() {
@@ -94,6 +113,8 @@ p6df::modules::java::jenv::init() {
 #
 # Function: p6df::modules::java::jenv::prompt::line()
 #
+#  Depends:	 p6_echo
+#  Environment:	 JAVA_HOME JENV_ROOT
 #>
 ######################################################################
 p6df::modules::java::jenv::prompt::line() {
@@ -119,6 +140,7 @@ p6df::modules::java::prompt::line() {
 #
 # Function: p6_java_prompt_info()
 #
+#  Depends:	 p6_lang
 #>
 ######################################################################
 p6_java_prompt_info() {
