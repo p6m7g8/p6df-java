@@ -52,6 +52,7 @@
 - p6df::modules::java::jenv::prompt::line()
 - p6df::modules::java::langs()
 - p6df::modules::java::prompt::line()
+- p6df::modules::java::vscodes()
 
 
 
