@@ -9,6 +9,8 @@ p6df::modules::java::deps() {
   ModuleDeps=(
     p6m7g8/p6common
     gcuisinier/jenv
+    jdillon/mvnsh
+    juven/maven-bash-completion
   )
 }
 
@@ -46,7 +48,7 @@ p6df::modules::java::brew() {
 #
 # Function: p6df::modules::java::langs()
 #
-#  Environment:	 XXX
+#  Environment:	 P6_DFZ_SRC_P6M7G8_DIR
 #>
 ######################################################################
 p6df::modules::java::langs() {
@@ -60,13 +62,11 @@ p6df::modules::java::langs() {
       )
     done
   )
-  jenv global 16.0
+  jenv global 16
   jenv rehash
 
-  # XXX: These use the base brew java
-  #  brew install maven
-  #  brew install maven-completion
-  #  brew install maven-shell
+  curl -o $P6_DFZ_SRC_P6M7G8_DIR/p6df-java/share/apache-maven-3.6.3-bin.tar.gz https://mirrors.gigenet.com/apache/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
+  (cd $P6_DFZ_SRC_P6M7G8_DIR/p6df-java/share; tar -xvzf apache-maven-3.6.3-bin.tar.gz)
 }
 
 ######################################################################
@@ -74,12 +74,13 @@ p6df::modules::java::langs() {
 #
 # Function: p6df::modules::java::init()
 #
-#  Environment:	 P6_DFZ_SRC_DIR
+#  Environment:	 P6_DFZ_SRC_DIR P6_DFZ_SRC_P6M7G8_DIR
 #>
 ######################################################################
 p6df::modules::java::init() {
 
   p6df::modules::java::jenv::init "$P6_DFZ_SRC_DIR"
+  p6df::util::path_if "$P6_DFZ_SRC_P6M7G8_DIR/p6df-java/apache-maven-3.6.3/bin"
 }
 
 ######################################################################
@@ -90,6 +91,7 @@ p6df::modules::java::init() {
 #  Args:
 #	dir -
 #
+#  Depends:	 p6_echo
 #  Environment:	 DISABLE_ENVS HAS_JAENV JENV_ROOT
 #>
 ######################################################################
@@ -128,6 +130,7 @@ jenv:\t  java_home=$JAVA_HOME"
 #
 # Function: p6df::modules::java::prompt::line()
 #
+#  Depends:	 p6_lang
 #>
 ######################################################################
 p6df::modules::java::prompt::line() {
