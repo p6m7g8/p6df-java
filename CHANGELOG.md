@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.1.1](https://github.com/p6m7g8/p6df-java/compare/v2.1.0...v2.1.1) (2021-04-04)
+
+
+### Features
+
+* **brew:** +jdk8 & 16, 15->16 ([#19](https://github.com/p6m7g8/p6df-java/issues/19)) ([e42decd](https://github.com/p6m7g8/p6df-java/commit/e42decd94282a1057954246b2f3da8eedf456ae2))
+
+
+### Bug Fixes
+
+* **brew:** deal with java API cluster and the 8 barrier ([#16](https://github.com/p6m7g8/p6df-java/issues/16)) ([2314c9e](https://github.com/p6m7g8/p6df-java/commit/2314c9e663026ca8ffc126c5313bab7153ede12a))
+
+
+* **link:** remove rendundant symlinks; echo for now ([#18](https://github.com/p6m7g8/p6df-java/issues/18)) ([2aa82f5](https://github.com/p6m7g8/p6df-java/commit/2aa82f5a8b03105bf108042f7f8836284dea76db))
+* **README:** updates generator ([#17](https://github.com/p6m7g8/p6df-java/issues/17)) ([7a72cb6](https://github.com/p6m7g8/p6df-java/commit/7a72cb62106b105ec2a9cefc5031727dc65dec8a))
+* **vscode:** splits vscode extensions to their languages ([#20](https://github.com/p6m7g8/p6df-java/issues/20)) ([73f854c](https://github.com/p6m7g8/p6df-java/commit/73f854cde054b2a46145a817a544ac21468efdc4))
+* Coc -> .github ([2e8d5d2](https://github.com/p6m7g8/p6df-java/commit/2e8d5d2ef857b9f3cfdbd98e0de8e5a8e1cc6f5d))
+
 ## [2.1.0](https://github.com/p6m7g8/p6df-java/compare/v2.0.0...v2.1.0) (2020-12-06)
 
 
